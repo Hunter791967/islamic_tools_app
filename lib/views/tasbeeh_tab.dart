@@ -76,37 +76,33 @@ class _TasbeehTabState extends State<TasbeehTab> {
           offsetOne: 2,
           offsetTwo: 2,
         ),
-        Transform.rotate(
-          angle: rotationAngle,
-          child: Stack(alignment: Alignment.topCenter, children: [
-            // Glowing circle behind the tasbeeh
-            Container(
-              width: MediaQuery.of(context).size.width * 0.4,
-              height: MediaQuery.of(context).size.height * 0.3,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                boxShadow: [
-                  BoxShadow(
-                    color: Theme.of(context).colorScheme.error.withAlpha(204),
-                    blurRadius: 20,
-                    spreadRadius: 10,
-                  ),
-                ],
+        const SizedBox(
+          height: 13,
+        ),
+        CustomContainer(
+          width: 226,
+          height: 60,
+          boxShadowColor: Theme.of(context).colorScheme.onSurface,
+          opacity: 204,
+          offsetOne: 2,
+          offsetTwo: 2,
+          blurRadius: 4,
+          spreadRadius: -10,
+          borderRadius: 16,
+          containerBgColor: Theme.of(context).colorScheme.secondary,
+          widget: Center(
+            child: Text(
+              currentTasbeehDisplayed,
+              style: const TextStyle(
+                //fontFamily: 'kofi',
+                fontSize: 32,
+                fontWeight: FontWeight.w900,
               ),
             ),
-
-            GestureDetector(
-              onTap: rotateImage,
-              child: ClipOval(
-                child: Image.asset(
-                  'assets/images/sebha05.png',
-                  width: MediaQuery.of(context).size.width * 0.60,
-                  height: MediaQuery.of(context).size.height * 0.26,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-          ]),
+          ),
+        ),
+        const SizedBox(
+          height: 16,
         ),
         CustomText(
           textTitle: 'tasabeeh_tab.tasbeehat_no'.tr(),
@@ -143,30 +139,40 @@ class _TasbeehTabState extends State<TasbeehTab> {
           ),
         ),
         const SizedBox(
-          height: 30,
+          height: 20,
         ),
-        CustomContainer(
-          width: 226,
-          height: 60,
-          boxShadowColor: Theme.of(context).colorScheme.onSurface,
-          opacity: 204,
-          offsetOne: 2,
-          offsetTwo: 2,
-          blurRadius: 4,
-          spreadRadius: -10,
-          borderRadius: 16,
-          containerBgColor: Theme.of(context).colorScheme.secondary,
-          widget: Center(
-            child: Text(
-              currentTasbeehDisplayed,
-              style: const TextStyle(
-                //fontFamily: 'kofi',
-                fontSize: 32,
-                fontWeight: FontWeight.w900,
+        Transform.rotate(
+          angle: rotationAngle,
+          child: Stack(alignment: Alignment.topCenter, children: [
+            // Glowing circle behind the tasbeeh
+            Container(
+              width: MediaQuery.of(context).size.width * 0.4,
+              height: MediaQuery.of(context).size.height * 0.3,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Theme.of(context).colorScheme.error.withAlpha(204),
+                    blurRadius: 20,
+                    spreadRadius: 10,
+                  ),
+                ],
               ),
             ),
-          ),
-        )
+
+            GestureDetector(
+              onTap: rotateImage,
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/images/sebha05.png',
+                  width: MediaQuery.of(context).size.width * 0.60,
+                  height: MediaQuery.of(context).size.height * 0.26,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+          ]),
+        ),
       ],
     );
   }

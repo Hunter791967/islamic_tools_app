@@ -180,6 +180,10 @@
     "country8" : "LEBANON",
     "country9" : "QATAR",
     "country10" : "PAKISTAN"
+  },
+  "quranTab_details" : {
+    "search": "SEARCH FOR",
+    "no_results": "NO RESULTS"
   }
 }
 

@@ -37,6 +37,16 @@ android {
             signingConfig = signingConfigs.debug
         }
     }
+
+    // 🔹 Add this block to rename APK automatically
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def appName = "IslamicTools"         // Your custom APK name
+            def versionName = variant.versionName
+            def buildType = variant.buildType.name
+            outputFileName = "${appName}-v${versionName}-${buildType}.apk"
+        }
+    }
 }
 
 flutter {

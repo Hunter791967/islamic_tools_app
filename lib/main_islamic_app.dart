@@ -51,6 +51,7 @@ class _MainIslamicAppState extends State<MainIslamicApp> {
       home: SplashView(
         isDarkMode: _isDarkMode,
         onThemeChanged: _toggleTheme,
+        animationType: SplashAnimationType.slide, // 🔥 try fade / slide / rotate
       ),
     );
   }

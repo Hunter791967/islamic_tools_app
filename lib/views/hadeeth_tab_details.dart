@@ -109,12 +109,13 @@ class _HadeethTabDetailsState extends State<HadeethTabDetails> {
             Expanded(
               child: CustomCard(
                 childWidget: SingleChildScrollView(
-                  padding: const EdgeInsets.all(24),
+                  padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 8),
                   child: Text(
                     hadeeth.hadeethListContent,
                     style: TextStyle(
-                      fontFamily: 'kofi',
-                      fontSize: 24,
+                      //fontFamily: 'kofi',
+                      fontSize: 28,
+                      fontWeight: FontWeight.w700,
                       color: Theme.of(context).colorScheme.onPrimary,
                       height: 1.8,
                     ),

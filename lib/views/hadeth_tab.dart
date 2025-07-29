@@ -54,7 +54,7 @@ class _HadethTabState extends State<HadethTab> {
             ? const Center(child: CircularProgressIndicator())
             : ListView.separated(
             padding:
-            const EdgeInsets.symmetric(vertical: 4, horizontal: 48), // Reduce extra spacing
+            const EdgeInsets.symmetric(vertical: 4, horizontal: 32), // Reduce extra spacing
             shrinkWrap: true, // ✅ Important to avoid over-expanding
             physics:
             const BouncingScrollPhysics(), // Optional: smoother scrolling

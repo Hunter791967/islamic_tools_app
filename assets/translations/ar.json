@@ -179,6 +179,10 @@
     "country8" : "لبنان",
     "country9" : "قطر",
     "country10" : "باكستان"
+  },
+  "quranTab_details" : {
+    "search": "ابحث عن",
+    "no_results": "لا يوجد نتائج"
   }
 }
 

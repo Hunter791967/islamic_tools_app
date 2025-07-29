@@ -64,7 +64,7 @@ class CustomTitle extends StatelessWidget {
                     maxLines: 1,
                     style: TextStyle(
                       fontFamily: 'kofi',
-                      fontSize: isArabic ? 40 : 28,
+                      fontSize: isArabic ? 38 : 28,
                       fontWeight: FontWeight.w900,
                       color: Theme.of(context).colorScheme.onPrimary,
                       shadows: [
