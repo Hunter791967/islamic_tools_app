@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
@@ -33,7 +32,12 @@ class _IslamAppSettingTapState extends State<IslamAppSettingTap> {
     setState(() {
       selectedLanguage = langCode;
     });
-    context.setLocale(Locale(langCode));
+
+    // ✅ Change locale safely after this frame
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      context.setLocale(Locale(langCode));
+    });
   }
 
   @override
@@ -64,7 +68,6 @@ class _IslamAppSettingTapState extends State<IslamAppSettingTap> {
                   value: widget.isDarkMode,
                   onChanged: widget.onThemeChanged,
                 ),
-
               ),
               Divider(
                 height: 40,
@@ -137,5 +140,3 @@ class _IslamAppSettingTapState extends State<IslamAppSettingTap> {
     );
   }
 }
-
-
